@@ -19,9 +19,18 @@ print(df.isnull().sum())
 #df[columns_to_convert] = df[columns_to_convert].apply(pd.to_numeric, errors='coerce')
 Matrix_Corr=df[["bore", "stroke", "compression-ratio", "horsepower"]].corr()
 print(Matrix_Corr)
-# Visualization
+# Visualization1
 sns.regplot(x="engine-size", y="price", data=df)
 plt.xlabel("Engine Size")
 plt.ylabel("Price")
 plt.title("Relationship between Engine Size and Price")
+plt.show()
+#Find the correlation between x="stroke" and y="price".
+Matrix2_Corr=df[["stroke","price"]].corr()
+print(Matrix2_Corr)
+# Visualization2
+sns.boxplot(x="body-style", y="price", data=df)
+plt.xlabel("body-style")
+plt.ylabel("Price")
+plt.title("Relationship between body-style and Price")
 plt.show()
