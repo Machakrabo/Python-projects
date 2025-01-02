@@ -34,3 +34,6 @@ plt.xlabel("body-style")
 plt.ylabel("Price")
 plt.title("Relationship between body-style and Price")
 plt.show()
+#Using descriptive statistical analysis function
+Descriptive_Analysis_All = df.describe()
+print(Descriptive_Analysis_All)
