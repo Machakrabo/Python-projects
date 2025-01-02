@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 #setting up the location of the file and the columns and reading the file.
-path ="D:\Documents\Maloshree\2025\Python projects\automobileEDA.csv"
+path ="automobileEDA.csv"
 df = pd.read_csv(path)
 print(df.head())
 print(df.info())
