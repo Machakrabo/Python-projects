@@ -13,6 +13,11 @@ print(df.head())
 print(df.info())
 #Are values missing?
 print(df.isnull().sum())
+#datatype of the columns
+print(df.dtypes)
+#data type of a specific column for example of column "body-style"
+print("Data type of column 'body-style' is:\n")
+print(df["body-style"].dtype)
 #Find the correlation between the following columns: bore, stroke, compression-ratio, and horsepower.
 # Ensure relevant columns are numeric
 #columns_to_convert = ["bore", "stroke", "compression-ratio", "horsepower"]
