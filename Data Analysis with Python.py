@@ -6,8 +6,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 #setting up the location of the file and the columns and reading the file.
-url = "https://raw.githubusercontent.com/Machakrabo/Python-projects/main/automobileEDA.csv"
-df = pd.read_csv(url)
+url_path = "https://raw.githubusercontent.com/Machakrabo/Python-projects/main/automobileEDA.csv"
+df = pd.read_csv(url_path)
 print(df.head())
 #display only the first rows
 print(df.info())
