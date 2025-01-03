@@ -54,3 +54,6 @@ print(count_horsepower_btwn_50_70)
 #identify the cars having horsepower between 50 and 70 HP
 horsepower_btwn_50_70_all = df[["horsepower", "make", "body-style", "aspiration"]][(df["horsepower"] > 50) & (df["horsepower"] < 70)]
 print("the cars having horsepower between 50 and 70 HP are \n:", horsepower_btwn_50_70_all)
+#grouping values to find the average "price" of each car based on "body-style"
+group_pivot_bodystyle = df[["body-style", "horsepower", "price"]].groupby(["body-style"], as_index=False).mean()
+print(group_pivot_bodystyle)
