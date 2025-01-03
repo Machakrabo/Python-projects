@@ -22,8 +22,8 @@ print(df["body-style"].dtype)
 # Ensure relevant columns are numeric
 #columns_to_convert = ["bore", "stroke", "compression-ratio", "horsepower"]
 #df[columns_to_convert] = df[columns_to_convert].apply(pd.to_numeric, errors='coerce')
-Matrix_Corr=df[["bore", "stroke", "compression-ratio", "horsepower"]].corr()
-print(Matrix_Corr)
+matrix_corr=df[["bore", "stroke", "compression-ratio", "horsepower"]].corr()
+print(matrix_corr)
 # Visualization1
 sns.regplot(x="engine-size", y="price", data=df)
 plt.xlabel("Engine Size")
@@ -31,8 +31,8 @@ plt.ylabel("Price")
 plt.title("Relationship between Engine Size and Price")
 plt.show()
 #Find the correlation between x="stroke" and y="price".
-Matrix2_Corr=df[["stroke","price"]].corr()
-print(Matrix2_Corr)
+matrix_corr2=df[["stroke","price"]].corr()
+print(matrix_corr2)
 # Visualization2
 sns.boxplot(x="body-style", y="price", data=df)
 plt.xlabel("body-style")
@@ -40,5 +40,17 @@ plt.ylabel("Price")
 plt.title("Relationship between body-style and Price")
 plt.show()
 #Using descriptive statistical analysis function
-Descriptive_Analysis_All = df.describe()
-print(Descriptive_Analysis_All)
+descriptive_Analysis_All = df.describe()
+print(descriptive_Analysis_All)
+#value count of the horsepower of the cars greater than 100 HP
+count_horsepower_plus100 = df["horsepower"][df["horsepower"] > 100].value_counts().to_frame()
+print (count_horsepower_plus100)
+#value count of the horsepower of the cars lesser than 100 HP
+count_horsepower_less100 = df["horsepower"][df["horsepower"] < 100].value_counts().to_frame()
+print (count_horsepower_less100)
+#value count of the horsepower of cars between 50 and 70 HP
+count_horsepower_btwn_50_70 = df["horsepower"][(df["horsepower"] > 50) & (df["horsepower"] < 70)].value_counts().to_frame()
+print(count_horsepower_btwn_50_70)
+#identify the cars having horsepower between 50 and 70 HP
+horsepower_btwn_50_70_all = df[["horsepower", "make", "body-style", "aspiration"]][(df["horsepower"] > 50) & (df["horsepower"] < 70)]
+print("the cars having horsepower between 50 and 70 HP are \n:", horsepower_btwn_50_70_all)
