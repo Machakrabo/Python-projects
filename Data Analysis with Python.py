@@ -57,3 +57,7 @@ print("the cars having horsepower between 50 and 70 HP are \n:", horsepower_btwn
 #grouping values to find the average "price" of each car based on "body-style"
 group_pivot_bodystyle = df[["body-style", "horsepower", "price"]].groupby(["body-style"], as_index=False).mean()
 print(group_pivot_bodystyle)
+#To find the minimum price of the car with horsepower less than 100
+horsepower_less100 = df[(df["horsepower"])<100]
+min_price= horsepower_less100[horsepower_less100["price"]==horsepower_less100["price"].min()]
+print(min_price[["make","horsepower","price"]])
